@@ -1,11 +1,18 @@
+/* eslint-disable */
 /*
 ** TailwindCSS Configuration File
 **
 ** Docs: https://tailwindcss.com/docs/configuration
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
+const colors = require('./constants/tailwindcss/colors.js')
 module.exports = {
-  theme: {},
+  important: true,
+  theme: {
+    extend: {
+      colors: colors,
+    }
+  },
   variants: {},
   plugins: [],
   purge: {

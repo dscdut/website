@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full">
+  <el-main>
     <ExampleComponent />
-    <p class="random-class">
+    <p class="random-class text-primary">
       {{ $t('random-text') | slugify }}
     </p>
-    <p class="mt-5">
+    <p class="mt-5 text-gray">
       {{ $t('random-text-using-grid') }}
       <span class="sx-10"></span>
       {{ $t('random-text-using-spacing') }}
@@ -12,7 +12,7 @@
     <p class="random-text-using-mixin">
       {{ $t('random-text-using-mixin') }}
     </p>
-  </div>
+  </el-main>
 </template>
 <script>
 import { ExampleComponent } from '~/components/uncommon/Home'
@@ -28,15 +28,15 @@ export default {
   },
   head() {
     return {
-      title: 'Home page',
-      description: 'A short dummy description',
+      title: this.$t('title.dashboard'),
     }
   },
 }
 </script>
 <style lang="scss">
+@import '~/assets/scss/base/utilities/_mixins';
 .random-class {
-  color: $primary;
+  color: var(--color-primary);
 }
 .random-text-using-mixin {
   @include centerAbsolute('both');

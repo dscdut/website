@@ -1,12 +1,12 @@
 <template>
-  <div
-    class="p-0 text-center bg-gray-900 text-white w-full"
-    style="position: fixed; bottom: 0;"
+  <el-footer
+    class="default-footer bg-gray-800 text-white fixed bottom-0 w-full text-center"
+    height="40px"
   >
-    <p class="my-1">
-      {{ $t('home.footer') }}
+    <p style="line-height: 40px;">
+      {{ $t('footer') }}
     </p>
-  </div>
+  </el-footer>
 </template>
 
 <script>

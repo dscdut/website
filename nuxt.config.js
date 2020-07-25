@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
   /*
    ** Nuxt rendering mode
@@ -14,14 +15,14 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.TITLE || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: process.env.DESCRIPTION || '',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -38,11 +39,13 @@ export default {
     '~/assets/scss/main.scss', // CSS class customization can cause confliction with other ui package
   ],
   /*
-   ** Import scss resource in every component so we can use the scss varibles
+   ** Import scss resource in every component
+   ** For global color variables, use CSS variables in :root{}
+   ** For color configuration, go to ~/assets/scss/base/utitlities/_variants.scss
    */
-  styleResources: {
-    scss: ['~/assets/scss/base/all.scss'],
-  },
+  // styleResources: {
+  //   scss: ['~/assets/scss/..........'],
+  // },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -128,7 +131,7 @@ export default {
   },
   router: {
     // base: '.'
-    middleware: 'MiddlewareExample'
+    middleware: ['MiddlewareExample']
   },
   generate: {
     /*

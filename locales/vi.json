@@ -1,12 +1,29 @@
 {
+  "title": {
+    "dashboard": "thecodeorigin | Trang chủ"
+  },
   "validate": {
     "email": "Sai định dạng email!",
     "required": "Trường này là bắt buộc!"
   },
   "navbar": {
     "login": "Đăng nhập",
-    "logout": "Đăng xuất"
+    "logout": "Đăng xuất",
+    "dashboard": "Trang chủ"
   },
+  "sidebar": {
+    "user": {
+      "title": "Quản lý người dùng",
+      "available": "Người dùng hiện có",
+      "list": "Danh sách",
+      "create": "Thêm mới",
+      "deleted": "Người dùng đã xóa"
+    },
+    "settings": {
+      "title": "Cài đặt"
+    }
+  },
+  "footer": "Mẫu website này được làm bởi thecodeorigin.com",
   "login": {
     "title": "Đăng nhập để thấy trang có xác thực bảo vệ",
     "email": "Nhập email của bạn vào...",
@@ -19,8 +36,7 @@
     "introduction": "Đây là một đoạn giới thiệu bằng Tiếng Việt.",
     "navbar": "Đây là thanh điều hướng",
     "header": "Đây là một header",
-    "sidebar": "Đây là một sidebar",
-    "footer": "Mẫu website này được làm bởi thecodeorigin.com"
+    "sidebar": "Đây là một sidebar"
   },
   "secret-text": "Trang này yêu cầu đăng nhập mới thấy được",
   "random-text": "Đoạn text này dùng biến scss toàn cục trong component riêng",
