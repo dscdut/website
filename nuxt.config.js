@@ -61,7 +61,6 @@ export default {
     // Utilities
     '~/utils/bus.js', // Event bus
     '~/utils/filters.js', // Filters for custom text formating
-    '~/mixins' // Global helper functions, use this.function_name() in your component
   ],
   /*
    ** Auto import components
