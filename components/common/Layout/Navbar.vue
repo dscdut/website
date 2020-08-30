@@ -10,20 +10,19 @@
     @select="handleSelect"
   >
     <el-menu-item index="1" :route="{ name: 'index' }">
-      Home
+      <span>Home</span>
     </el-menu-item>
     <el-menu-item index="2" :route="{ name: 'introduction' }">
-      Introduction
+      <span>Introduction</span>
     </el-menu-item>
     <el-menu-item index="3" :route="{ name: 'secret' }">
-      Secret page
+      <span>Secret page</span>
     </el-menu-item>
     <client-only>
       <!-- Login button -->
       <el-menu-item
         v-if="$store.state.auth && $route.path != '/login'"
-        class="mr-3"
-        style="float: right;"
+        class="mr-3 float-right"
         :title="$t('navbar.logout')"
         @click="$store.dispatch('logout')"
       >
@@ -31,8 +30,7 @@
       </el-menu-item>
       <el-menu-item
         v-if="!$store.state.auth && $route.path != '/login'"
-        class="mr-3"
-        style="float: right;"
+        class="mr-3 float-right"
         :title="$t('navbar.login')"
         @click="$root.$emit('showLoginDialog')"
       >
@@ -42,16 +40,16 @@
       <el-menu-item
         v-if="locale == 'en'"
         size="sm"
-        style="float: right;"
-        @click="changeLanguage('vi')"
+        class="float-right"
+        @click="$changeLocale('vi')"
       >
         Tiếng Việt
       </el-menu-item>
       <el-menu-item
         v-if="locale == 'vi'"
         size="sm"
-        style="float: right;"
-        @click="changeLanguage('en')"
+        class="float-right"
+        @click="$changeLocale('en')"
       >
         English
       </el-menu-item>
@@ -60,7 +58,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   name: 'Navbar',
   data() {
@@ -74,13 +72,6 @@ export default {
     }),
   },
   methods: {
-    ...mapMutations({
-      SET_LANG: 'SET_LANG',
-    }),
-    changeLanguage(locale) {
-      this.SET_LANG(locale) // store in state and localStorage
-      this.$i18n.locale = locale // live change on website
-    },
     handleSelect(key, keyPath) {
       console.log(key, keyPath)
     },

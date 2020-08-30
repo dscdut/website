@@ -133,7 +133,7 @@ export default {
   },
   router: {
     // base: '.'
-    middleware: ['MiddlewareExample']
+    middleware: ['getLocale']
   },
   generate: {
     /*

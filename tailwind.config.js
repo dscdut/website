@@ -7,6 +7,9 @@
 */
 const colors = require('./constants/tailwindcss/colors.js')
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
   important: true,
   theme: {
     extend: {
