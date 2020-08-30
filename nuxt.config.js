@@ -51,6 +51,9 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
+    // Services
+    '~/services/auth.js',
+    '~/services/client.js',
     // Plugins
     '@/plugins/element-ui',
     '~/plugins/i18n.js',
