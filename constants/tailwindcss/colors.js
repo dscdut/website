@@ -2,6 +2,30 @@
 // Please do not modify this file
 // Color customizations are made by CSS variables in '~/assets/scss/base/utilities/_variants.scss'
 module.exports = {
+  'theme-1': {
+    default: 'var(--color-theme-1)',
+    '100': 'var(--color-theme-1-100)',
+    '200': 'var(--color-theme-1-200)',
+    '300': 'var(--color-theme-1-300)',
+    '400': 'var(--color-theme-1-400)',
+    '500': 'var(--color-theme-1-500)',
+    '600': 'var(--color-theme-1-600)',
+    '700': 'var(--color-theme-1-700)',
+    '800': 'var(--color-theme-1-800)',
+    '900': 'var(--color-theme-1-900)',
+  },
+  'theme-2': {
+    default: 'var(--color-theme-2)',
+    '100': 'var(--color-theme-2-100)',
+    '200': 'var(--color-theme-2-200)',
+    '300': 'var(--color-theme-2-300)',
+    '400': 'var(--color-theme-2-400)',
+    '500': 'var(--color-theme-2-500)',
+    '600': 'var(--color-theme-2-600)',
+    '700': 'var(--color-theme-2-700)',
+    '800': 'var(--color-theme-2-800)',
+    '900': 'var(--color-theme-2-900)',
+  },
   white: 'var(--color-white)',
   black: 'var(--color-black)',
   blue: 'var(--color-blue)',
