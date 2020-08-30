@@ -1,11 +1,12 @@
 import Vue from 'vue'
 
-Vue.filter('lower', (val) => {
+Vue.filter('upper', (val) => {
   return val.toUpperCase()
 })
 
-Vue.filter('upper', (val) => {
-  return val.toUpperCase()
+Vue.filter('formatDate', (val) => {
+  const moment = require('moment')
+  return moment(val).format('l')
 })
 
 Vue.filter('slugify', (val) => {
