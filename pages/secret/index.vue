@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <el-main>
     <h1 class="m-3 text-purple">
       {{ $t('secret-text') }}
     </h1>
-  </div>
+  </el-main>
 </template>
 <script>
 export default {

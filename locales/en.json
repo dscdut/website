@@ -71,7 +71,7 @@
   "home": {
     "title": "Welcome",
     "lang": "Eng",
-    "introduction": "This is an introduction in English.",
+    "introduction": "Don't mind the broken CSS, these are just example.",
     "navbar": "This is a navbar",
     "header": "This is a header",
     "sidebar": "This is a sidebar"

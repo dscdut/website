@@ -1,7 +1,7 @@
 <template>
   <div class="p-0 w-full">
     <Navbar @signInDialogTrigger="dialogVisible = true" />
-    <nuxt />
+    <nuxt keep-alive />
     <Login :visible="dialogVisible" @onClose="dialogVisible = false" />
     <Footer />
   </div>

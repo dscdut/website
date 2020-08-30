@@ -32,6 +32,19 @@ export default {
    */
   loading: { color: 'green' },
   /*
+   ** Customize how page and layout transition looks
+   */
+  layoutTransition: {
+    // Is "layout" by default
+    name: 'fade',
+    mode: 'out-in'
+  },
+  pageTransition: {
+    // Is "page" by default
+    name: 'slide-fade',
+    mode: 'out-in',
+  },
+  /*
    ** Global CSS
    */
   css: [

@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <el-main class="container mx-auto">
     <h1 class="text-2xl my-3">
       {{ $t('login.title') }}
     </h1>
@@ -25,7 +25,7 @@
         </el-button>
       </FormWrapper>
     </div>
-  </div>
+  </el-main>
 </template>
 
 <script>
