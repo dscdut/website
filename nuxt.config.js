@@ -146,7 +146,7 @@ export default {
   },
   router: {
     // base: '.'
-    middleware: ['getLocale']
+    middleware: []
   },
   generate: {
     /*

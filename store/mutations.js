@@ -1,12 +1,12 @@
+import Vue from 'vue'
 export default {
   // Communicate with Devtools
   SET_LANG(state, locale) {
     if (state.locales.includes(locale)) {
-      state.locale = locale
-      localStorage.setItem('locale', locale)
+      Vue.set(state, 'locale', locale)
     }
   },
   SET_AUTH(state, auth) {
-    state.auth = auth
+    Vue.set(state, 'auth', auth)
   },
 }

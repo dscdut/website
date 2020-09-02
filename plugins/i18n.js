@@ -26,9 +26,10 @@ export default ({ app, store, query }, inject) => {
       localStorage.setItem('locale', locale)
     }
     // Set locale in query param
-    app.router.push({ query: { lang: locale } })
+    app.router.push({ query: { ...query, lang: locale } })
   }
 
+  // Set locale for initial load
   // process.browser slow initial load speed time
   // Use this to make sure that the important stuff is loaded first
   // By doing this, with a right amount of time, we seperate this action
