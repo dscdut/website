@@ -1,12 +1,4 @@
 {
-  "title": {
-    "dashboard": "thecodeorigin | Dashboard"
-  },
-  "validate": {
-    "email": "Wrong email format!",
-    "required": "This field is required!",
-    "numeric": "This field must be a number!"
-  },
   "error": {
     "INVALID_PHONE_PASSWORD": "Your credentials are invalid",
     "NOT_UPDATE_YOURSELF": "You cannot update yourself in here, go to profile page",
@@ -42,44 +34,7 @@
     "REQUEST_TIMEOUT": "Request time out",
     "METHOD_NOT_ALLOWED": "Method not allowed",
     "NOT_FOUND": "Not found",
-    "FORBIDDEN": "Forbidden"
-  },
-  "navbar": {
-    "login": "Login",
-    "logout": "Logout",
-    "dashboard": "Dashboard"
-  },
-  "sidebar": {
-    "user": {
-      "title": "User management",
-      "available": "Available user",
-      "list": "List",
-      "create": "Add new",
-      "deleted": "Deleted user"
-    },
-    "settings": {
-      "title": "Settings"
-    }
-  },
-  "footer": "Copyright 2020 by thecodeorigin.com",
-  "login": {
-    "title": "Log in to see secret page",
-    "email": "Your email...",
-    "password": "Your password...",
-    "button": "Log in"
-  },
-  "home": {
-    "title": "Welcome",
-    "lang": "Eng",
-    "introduction": "Don't mind the broken CSS, these are just example.",
-    "navbar": "This is a navbar",
-    "header": "This is a header",
-    "sidebar": "This is a sidebar"
-  },
-  "secret-text": "This page requires authentication",
-  "random-text": "This text use global scss variable in the component",
-  "random-text-2": "Introduction page content",
-  "random-text-using-grid": "This text's using mt-5 (custom scss grid)",
-  "random-text-using-spacing": "This text's using sx-10 (custom scss spacing)",
-  "random-text-using-mixin": "This text's using centerAbsolute('both') (custom scss mixin)"
+    "FORBIDDEN": "Forbidden",
+    "NOT_CHANGE_ANOTHER_AUTHORS_ITEM": "You cannot update others' content"
+  }
 }

@@ -11,8 +11,8 @@ export default ({ app, store, query }, inject) => {
     locale: store.state.locale,
     fallbackLocale: 'en',
     messages: {
-      en: require('~/locales/en.json'),
-      vi: require('~/locales/vi.json'),
+      en: require('~/constants/locales/en').default,
+      vi: require('~/constants/locales/vi').default,
     },
   })
 

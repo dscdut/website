@@ -5,7 +5,7 @@
 ** Docs: https://tailwindcss.com/docs/configuration
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
-const colors = require('./constants/tailwindcss/colors.js')
+const colors = require('./constants/config/tailwindcss/colors.js')
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
