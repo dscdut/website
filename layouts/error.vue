@@ -115,26 +115,24 @@ export default {
   margin-bottom: 15px;
 }
 
-.notfound .home-btn,
-.notfound .contact-btn {
+.notfound .home-btn {
   font-family: Google;
   display: inline-block;
-  font-weight: 700;
+  font-weight: bold;
   text-decoration: none;
   background-color: transparent;
-  border: 2px solid transparent;
-  text-transform: uppercase;
-  padding: 13px 25px;
-  font-size: 18px;
+  padding: 9px 18px;
+  border: 5px solid transparent;
+  font-size: 16px;
   border-radius: 40px;
   margin: 7px;
-  -webkit-transition: 0.2s all;
   transition: 0.2s all;
-}
-
-.notfound .home-btn:hover,
-.notfound .contact-btn:hover {
-  opacity: 0.9;
+  text-transform: uppercase;
+  &:hover {
+    background-color: var(--color-theme-1);
+    border: 5px solid #ffffff;
+    color: #ffffff;
+  }
 }
 
 .notfound .home-btn {
