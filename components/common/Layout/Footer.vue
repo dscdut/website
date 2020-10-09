@@ -4,7 +4,7 @@
     height="30px"
   >
     <p style="line-height: 30px">
-      {{ $t('footer') }}
+      {{ $t('footer.title') }}
     </p>
   </el-footer>
 </template>

@@ -5,14 +5,15 @@ import { rootMutations } from '~/constants/vuex'
 Vue.use(VueI18n)
 
 export default ({ app, store, query }, inject) => {
+  const localeModules = require('~/constants/locales').default
   // Set i18n instance on app
   // This way we can use it in middleware and pages asyncData/fetch
   app.i18n = new VueI18n({
     locale: store.state.locale,
     fallbackLocale: 'en',
     messages: {
-      en: require('~/constants/locales/en').default,
-      vi: require('~/constants/locales/vi').default,
+      en: localeModules.en,
+      vi: localeModules.vi,
     },
   })
 

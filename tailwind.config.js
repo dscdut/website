@@ -8,6 +8,7 @@
 const colors = require('./constants/config/tailwindcss/colors.js')
 module.exports = {
   future: {
+    purgeLayersByDefault: true,
     removeDeprecatedGapUtilities: true,
   },
   important: true,

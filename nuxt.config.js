@@ -79,7 +79,7 @@ export default {
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
    */
-  components: true,
+  components: false,
   /*
    ** Nuxt.js dev-modules
    */
@@ -141,6 +141,10 @@ export default {
             fix: true
           }
         })
+      }
+      config.node = {
+        __dirname: true,
+        fs: 'empty',
       }
     }
   },
