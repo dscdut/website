@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { FormWrapper, InputWrapper } from '~/components/common'
+import { FormWrapper, InputWrapper } from '~/components/common/Templates/Form'
 export default {
   // Back to home if you've already been authenticated
   middleware: 'authNotRequired',

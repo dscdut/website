@@ -5,7 +5,6 @@
   >
     <FormWrapper @onSubmit="postLogin">
       <InputWrapper rules="required|email">
-        <!--  -->
         <el-input
           v-model="form.email"
           type="email"

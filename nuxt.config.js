@@ -68,7 +68,7 @@ export default {
     '~/services/auth.js',
     '~/services/client.js',
     // Plugins
-    '@/plugins/element-ui',
+    '~/plugins/element-ui',
     '~/plugins/i18n.js',
     '~/plugins/vee-validate.js',
     // Utilities
@@ -143,7 +143,6 @@ export default {
         })
       }
       config.node = {
-        __dirname: true,
         fs: 'empty',
       }
     }

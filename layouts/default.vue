@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import { Login, Navbar, Footer } from '~/components/common'
+import { Login } from '~/components/common/Auth'
+import { Navbar, Footer } from '~/components/common/Layout'
 export default {
   components: {
     Login,

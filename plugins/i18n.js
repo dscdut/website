@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import { rootMutations } from '~/constants/vuex'
+import { rootMutations } from '~/constants/vuex/root'
 
 Vue.use(VueI18n)
 
