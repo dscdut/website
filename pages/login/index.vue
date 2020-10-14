@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { authActions } from '~/constants/vuex/auth'
 import { FormWrapper, InputWrapper } from '~/components/common/Templates/Form'
 export default {
   // Back to home if you've already been authenticated
@@ -47,7 +48,7 @@ export default {
   },
   methods: {
     async postLogin() {
-      await this.$store.dispatch('login', this.form)
+      await this.$store.dispatch(authActions.LOGIN, this.form)
       this.$router.push('/')
     },
   },

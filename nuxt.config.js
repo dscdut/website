@@ -4,7 +4,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: 'universal',
+  // mode: 'universal', // Deprecated
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -56,9 +56,9 @@ export default {
    ** For global color variables, use CSS variables in :root{}
    ** For color configuration, go to ~/assets/scss/base/utitlities/_variants.scss
    */
-  // styleResources: {
-  //   scss: ['~/assets/scss/..........'],
-  // },
+  styleResources: {
+    scss: ['~/assets/scss/base/styleResources/mixins.scss'],
+  },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins

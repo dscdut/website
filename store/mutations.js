@@ -6,7 +6,4 @@ export default {
       Vue.set(state, 'locale', locale)
     }
   },
-  SET_AUTH(state, auth) {
-    Vue.set(state, 'auth', auth)
-  },
 }

@@ -1,5 +1,8 @@
 <template>
   <el-main>
+    <el-button size="mini" type="warning" @click="$router.push('/secret')">
+      {{ $t('home.to-secret') }}
+    </el-button>
     <ExampleComponent />
     <transition name="slide-fade" mode="out-in">
       <el-button
@@ -10,7 +13,7 @@
         class="text-yellow"
         @click="$changeLocale('vi')"
       >
-        Change to vi
+        Đổi sang vi
       </el-button>
       <el-button
         v-else

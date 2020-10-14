@@ -1,5 +1,5 @@
+import { authMutations } from '~/constants/vuex/auth'
 const cookieparser = process.server ? require('cookieparser') : undefined
-const Cookie = process.client ? require('js-cookie') : undefined
 export default {
   // This will run first when nuxt app init
   nuxtServerInit({ commit }, { req }) {
@@ -13,25 +13,6 @@ export default {
         // No valid cookie found
       }
     }
-    commit('SET_AUTH', auth)
-  },
-  login({ commit }, form) {
-    const auth = {
-      currentUser: {
-        name: 'Someone',
-      },
-      accessToken: 'yourAccessTokenFromBackend',
-    }
-    setTimeout(() => {
-      // We simulate the async request with timeout.
-      // Replace the whole thing with a nice axios request to obtain the auth instance as usual
-      // This use a constain as an example
-    }, 1000)
-    Cookie.set('auth', auth, { expires: 365 }) // Saving token in cookie for server rendering
-    commit('SET_AUTH', auth) // Mutating to store for client rendering
-  },
-  logout({ commit }) {
-    Cookie.remove('auth')
-    commit('SET_AUTH', null)
+    commit(authMutations.SET.AUTH, auth)
   },
 }
