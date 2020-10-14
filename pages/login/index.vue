@@ -4,7 +4,7 @@
       {{ $t('login.title') }}
     </h1>
     <div>
-      <FormWrapper @onSubmit="postLogin">
+      <FormWrapper ref="loginForm" @onSubmit="postLogin">
         <InputWrapper rules="required|email">
           <!--  -->
           <el-input
@@ -49,6 +49,7 @@ export default {
   methods: {
     async postLogin() {
       await this.$store.dispatch(authActions.LOGIN, this.form)
+      this.$refs.loginForm.reset()
       this.$router.push('/')
     },
   },

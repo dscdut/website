@@ -1,6 +1,6 @@
 <template>
   <ValidationObserver v-slot="{ passes }">
-    <el-form @submit.native.prevent="passes(submitForm)">
+    <el-form ref="wrappedForm" @submit.native.prevent="passes(submitForm)">
       <slot></slot>
     </el-form>
   </ValidationObserver>
@@ -13,6 +13,9 @@ export default {
     ValidationObserver,
   },
   methods: {
+    reset() {
+      this.$refs.wrappedForm.$el.reset()
+    },
     submitForm() {
       this.$emit('onSubmit')
     },
