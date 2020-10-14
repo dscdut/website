@@ -40,8 +40,7 @@
 import { authActions } from '~/constants/vuex/auth'
 import { FormWrapper, InputWrapper } from '~/components/common/Templates/Form'
 export default {
-  // Back to home if you've already been authenticated
-  middleware: 'authNotRequired',
+  layout: 'unauth',
   components: {
     FormWrapper,
     InputWrapper,
@@ -58,10 +57,6 @@ export default {
     async postLogin() {
       await this.$store.dispatch(authActions.LOGIN, this.form)
       this.$router.push('/')
-      this.form = await {
-        email: '',
-        password: '',
-      }
       this.$refs.loginForm.reset()
     },
   },

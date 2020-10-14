@@ -2,23 +2,17 @@
   <div class="p-0 w-full">
     <Navbar @signInDialogTrigger="dialogVisible = true" />
     <nuxt keep-alive />
-    <Login />
   </div>
 </template>
 
 <script>
-import { Login } from '~/components/common/Auth'
 import { Navbar } from '~/components/common/Layout'
 export default {
   name: 'Default',
+  // Back to home if you've already been authenticated
+  middleware: 'authNotRequired',
   components: {
-    Login,
     Navbar,
-  },
-  methods: {
-    triggerLoginForm() {
-      this.$root.$emit('my-dialog-show', 'login-form')
-    },
   },
 }
 </script>

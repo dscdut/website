@@ -1,9 +1,6 @@
 <template>
-  <el-dialog
-    :visible.sync="dialogVisible"
-    title="Sign in to access the secret page"
-  >
-    <FormWrapper @onSubmit="postLogin">
+  <DialogWrapper id="login-form" title="Sign in to access the secret page">
+    <FormWrapper ref="loginForm" @onSubmit="postLogin">
       <InputWrapper rules="required|email">
         <el-input
           v-model="form.email"
@@ -22,11 +19,15 @@
         {{ $t('login.button') }}
       </el-button>
     </FormWrapper>
-  </el-dialog>
+  </DialogWrapper>
 </template>
 <script>
+import { authActions } from '~/constants/vuex/auth'
 export default {
   components: {
+    // Just an example for dynamically import
+    DialogWrapper: () =>
+      import('~/components/common/Templates/Dialog/DialogWrapper.vue'),
     FormWrapper: () =>
       import('~/components/common/Templates/Form/FormWrapper.vue'),
     InputWrapper: () =>
@@ -38,22 +39,12 @@ export default {
         email: '',
         password: '',
       },
-      dialogVisible: false,
     }
   },
-  created() {
-    this.$root.$on('showLoginDialog', () => {
-      this.dialogVisible = true
-    })
-    this.$root.$on('hideLoginDialog', () => {
-      this.dialogVisible = false
-    })
-  },
-  // Back to home if you've already been authenticated
   methods: {
     async postLogin() {
-      await this.$store.dispatch('login', this.form)
-      this.dialogVisible = false
+      await this.$store.dispatch(authActions.LOGIN, this.form)
+      this.$root.$emit('my-dialog-hide', 'login-form')
     },
   },
 }

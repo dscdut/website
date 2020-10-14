@@ -5,6 +5,7 @@
     :title="title"
     :append-to-body="true"
     :fullscreen="fullscreen"
+    :destroy-on-close="true"
   >
     <slot />
   </el-dialog>
@@ -29,6 +30,15 @@ export default {
     return {
       dialogVisible: false,
     }
+  },
+  watch: {
+    dialogVisible() {
+      if (this.dialogVisible) {
+        this.$emit('my-dialog-on')
+      } else {
+        this.$emit('my-dialog-off')
+      }
+    },
   },
   created() {
     this.$root.$on('my-dialog-show', (id) => {

@@ -151,6 +151,11 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    babel: {
+      plugins: [
+        '@babel/plugin-proposal-optional-chaining'
+      ]
+    },
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {

@@ -1,5 +1,5 @@
 <template>
-  <ValidationObserver v-slot="{ passes }">
+  <ValidationObserver v-slot="{ passes }" ref="wrappedFormValidator">
     <el-form ref="wrappedForm" @submit.native.prevent="passes(submitForm)">
       <slot></slot>
     </el-form>
@@ -14,8 +14,10 @@ export default {
   },
   methods: {
     reset() {
-      this.$refs.wrappedForm.$el.reset()
-      this.$refs.wrappedForm.errors.clear()
+      this.$refs.wrappedForm?.$el?.reset()
+      this.$refs.wrappedForm?.errors?.clear()
+      this.$refs.wrappedFormValidator?.reset()
+      this.$refs.wrappedFormValidator?.$validator?.clean()
     },
     submitForm() {
       this.$emit('onSubmit')
