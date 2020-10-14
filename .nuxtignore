@@ -1,2 +1,2 @@
 # For single-file-component separation concern
-pages/**/script.js
+client/pages/**/script.js

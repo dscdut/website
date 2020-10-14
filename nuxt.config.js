@@ -1,15 +1,35 @@
 /* eslint-disable */
+require('dotenv').config()
 export default {
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
   // mode: 'universal', // Deprecated
+  ssr: true,
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
   target: 'server',
+  /*
+   ** Nuxt server
+   ** See https://nuxtjs.org/api/configuration-server
+   */
+  server: {
+    port: process.env.PORT || 3000,
+    host: process.env.HOST || `0.0.0.0`,
+    /*
+     ** Nuxt timing api
+     ** See https://nuxtjs.org/api/configuration-server/#using-timing-api
+     */
+    timing: false,
+  },
+  /*
+   ** Nuxt root directory
+   ** See https://nuxtjs.org/api/configuration-srcdir
+   */
+  srcDir: 'client/',
   /*
    ** Headers of the page
    ** See https://nuxtjs.org/api/configuration-head
@@ -88,6 +108,8 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    // Doc: https://github.com/nuxt-community/dotenv-module#path
+    ['@nuxtjs/dotenv', { path: './' }]
   ],
   /*
    ** Nuxt.js modules

@@ -1,0 +1,10 @@
+@import './components/menu';
+@import './theme/fonts';
+@import './theme/colors';
+@import "~element-ui/packages/theme-chalk/src/index";
+
+.no-caret {
+    .el-submenu__icon-arrow {
+        display: none !important;
+    }
+}
