@@ -1,5 +1,5 @@
 /* eslint-disable */
-require('dotenv').config()
+require('dotenv').config() // Using .env in nuxt.config.js requires this
 export default {
   /*
    ** Nuxt rendering mode

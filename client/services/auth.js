@@ -20,6 +20,7 @@ export default function ({ $axios, store, app }, inject) {
     return config
   })
   authApi.onError((error) => {
+    // Must be customized base on your API error structure
     if (error.response.data.message) {
       error.response.data.message.forEach((message) => {
         Message.error(app.i18n.t('error.' + message.code))

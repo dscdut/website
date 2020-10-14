@@ -10,6 +10,7 @@
 import { Login } from '~/components/common/Auth'
 import { Navbar } from '~/components/common/Layout'
 export default {
+  name: 'Default',
   components: {
     Login,
     Navbar,

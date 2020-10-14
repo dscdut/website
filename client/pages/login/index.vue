@@ -62,7 +62,6 @@ export default {
         email: '',
         password: '',
       }
-      console.log(this.$refs.loginForm)
       this.$refs.loginForm.reset()
     },
   },

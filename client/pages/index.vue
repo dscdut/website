@@ -38,9 +38,6 @@ export default {
   computed: mapState({
     locale: (state) => state.locale,
   }),
-  created() {
-    console.log(process.env.PORT)
-  },
   head() {
     return {
       title: this.$t('home.title'),
