@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     reset() {
-      this.$refs.wrappedForm.$el.reset()
+      this.$refs.wrappedForm.$el.querySelector('.el-form').reset()
     },
     submitForm() {
       this.$emit('onSubmit')

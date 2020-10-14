@@ -49,8 +49,13 @@ export default {
   methods: {
     async postLogin() {
       await this.$store.dispatch(authActions.LOGIN, this.form)
-      this.$refs.loginForm.reset()
       this.$router.push('/')
+      this.form = await {
+        email: '',
+        password: '',
+      }
+      console.log(this.$refs.loginForm)
+      this.$refs.loginForm.reset()
     },
   },
 }
