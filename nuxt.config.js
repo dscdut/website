@@ -92,6 +92,7 @@ export default {
     '~/plugins/i18n.js',
     '~/plugins/vee-validate.js',
     // Utilities
+    '~/utils/authWrapper.js', // Global AuthWrapper component
     '~/utils/bus.js', // Event bus
     '~/utils/filters.js', // Filters for custom text formating
   ],
