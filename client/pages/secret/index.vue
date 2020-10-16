@@ -3,6 +3,9 @@
     <h1 class="text-purple">
       {{ $t('secret.text') }}
     </h1>
+    <auth :allow="['ADMIN']">
+      <h2>This text's only shown to ADMIN</h2>
+    </auth>
     <el-button size="mini" type="primary" @click="$router.push('/')">
       {{ $t('secret.to-home') }}
     </el-button>

@@ -94,6 +94,7 @@ export default {
     // Utilities
     '~/utils/authWrapper.js', // Global AuthWrapper component
     '~/utils/bus.js', // Event bus
+    '~/utils/directive.js', // Vue directive
     '~/utils/filters.js', // Filters for custom text formating
   ],
   /*
@@ -109,17 +110,17 @@ export default {
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    // Doc: https://github.com/nuxt-community/dotenv-module#path
-    ['@nuxtjs/dotenv', { path: './' }]
   ],
   /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
+  ** Nuxt.js modules
+  */
+ modules: [
+   // Doc: https://axios.nuxtjs.org/usage
+   '@nuxtjs/axios',
+   // Doc: https://github.com/nuxt-community/dotenv-module
+   // Doc: https://github.com/nuxt-community/dotenv-module#path
+   // '@nuxtjs/dotenv',
+   ['@nuxtjs/dotenv', { path: './' }],
     [
       'nuxt-fontawesome',
       {

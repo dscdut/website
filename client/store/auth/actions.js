@@ -5,9 +5,8 @@ export default {
     let auth = null
     // Faking auth data
     auth = {
-      currentUser: {
-        name: 'Someone',
-      },
+      ...form,
+      role: 'ADMIN',
       accessToken: 'yourAccessTokenFromBackend',
     }
     Cookie.set('auth', auth, { expires: 365 }) // Saving token in cookie for server rendering

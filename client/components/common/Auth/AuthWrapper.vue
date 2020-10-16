@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <span v-if="isAllowed">
+    <slot v-for="role in allow" :name="role" />
     <slot />
-  </div>
+  </span>
 </template>
 <script>
 import { roles } from '~/constants/config/base/auth'
@@ -12,6 +13,11 @@ export default {
       default() {
         return ['ALL']
       },
+    },
+  },
+  computed: {
+    isAllowed() {
+      return this.allow.includes(this.$store.state.auth.data?.role)
     },
   },
   created() {
@@ -27,9 +33,6 @@ export default {
         }
       })
     }
-  },
-  methods: {
-    checkPermission() {},
   },
 }
 </script>
