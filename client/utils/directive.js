@@ -5,6 +5,22 @@ Vue.directive('auth', {
   bind(el, binding, vnode, oldVnode) {
     // Only throw in dev mode
     if (process.env.NODE_ENV === 'development') {
+      // Handle passing weird args
+      if (!['allow', 'forbid'].includes(binding.arg)) {
+        throw new Error(
+          'The directive v-auth must use :allow or :forbid argument'
+        )
+      }
+      if (!Array.isArray(binding.value)) {
+        throw new TypeError(
+          'The directive v-auth must have value as Array type'
+        )
+      }
+      if (binding.value.length < 1) {
+        throw new Error(
+          'The directive v-auth must have value as an array of declared roles'
+        )
+      }
       // Handle passing weird role name
       binding.value.forEach((role) => {
         if (!roles.includes(role)) {
@@ -15,23 +31,20 @@ Vue.directive('auth', {
           )
         }
       })
-      // Handle passing weird args
-      if (!['allow', 'forbid'].includes(binding.arg)) {
-        throw new Error(
-          'The directive v-auth must use :allow or :forbid argument'
-        )
-      }
     }
     // Detect if using 'allow' or 'forbid'
     const allow = binding.arg === 'allow'
     if (!binding.value.includes(vnode.context.$store.state.auth.data?.role)) {
       // disabled modifier
       el.disabled = binding.modifiers.active & allow
-      el.style.cursor =
-        binding.modifiers.active & allow ? 'not-allowed' : el.style.cursor
+      if (binding.modifiers.active & allow) {
+        el.classList.add('cursor-not-allowed')
+        el.classList.add('opacity-50')
+      }
       // visible modifier
-      el.style.display =
-        binding.modifiers.visible & allow ? 'none' : el.style.display
+      if (binding.modifiers.visible & allow) {
+        el.classList.add('hidden')
+      }
       // inner modifier
       el.innerHTML = binding.modifiers.inner & allow ? null : el.innerHTML
     }
