@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import { roles } from '~/constants/config/base/auth'
 // Use v-auth with "allow" argument
+// <div v-auth:allow.active="['ADMIN', 'SOMETHING']" />
+// <div v-auth:allow.visible="['ADMIN', 'SOMETHING']" />
+// <div v-auth:allow.inner="['ADMIN', 'SOMETHING']" />
 Vue.directive('auth', {
   bind(el, binding, vnode, oldVnode) {
     // Only throw in dev mode
