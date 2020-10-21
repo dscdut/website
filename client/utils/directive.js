@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { roles } from '~/constants/config/base/auth'
+// v-auth can't work as v-if, use <auth> wrapper component instead
 // Use v-auth with "allow" argument
 // <div v-auth:allow.active="['ADMIN', 'SOMETHING']" />
 // <div v-auth:allow.visible="['ADMIN', 'SOMETHING']" />
