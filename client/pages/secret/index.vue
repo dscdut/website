@@ -6,7 +6,7 @@
     <auth :allow="['ADMIN']">
       <h2>This text's only shown to ADMIN</h2>
     </auth>
-    <el-button v-auth:allow.active="['EDITOR']">
+    <el-button v-auth:allow="['EDITOR']">
       <!--  -->
       Disabled via directive
     </el-button>
