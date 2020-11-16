@@ -1,28 +1,29 @@
 <template>
   <DialogWrapper id="login-form" title="Sign in to access the secret page">
-    <FormWrapper ref="loginForm" @onSubmit="postLogin">
-      <InputWrapper rules="required|email">
+    <FormWrapper ref="loginForm" :model="form" @onSubmit="postLogin">
+      <InputWrapper rules="required|email" prop="email">
+        <!--  -->
         <el-input
           v-model="form.email"
           type="email"
           :placeholder="$t('login.email')"
         ></el-input>
       </InputWrapper>
-      <InputWrapper rules="required">
+      <InputWrapper rules="required" prop="password">
         <el-input
           v-model="form.password"
           type="password"
           :placeholder="$t('login.password')"
         ></el-input>
       </InputWrapper>
-      <el-button native-type="submit">
+      <el-button native-type="submit" type="success">
         {{ $t('login.button') }}
       </el-button>
     </FormWrapper>
   </DialogWrapper>
 </template>
 <script>
-import { authActions } from '~/constants/vuex/auth'
+import { authActions } from '~/store/auth/actions'
 export default {
   components: {
     // Just an example for dynamically import

@@ -6,7 +6,7 @@
     <auth :allow="['ADMIN']">
       <h2>This text's only shown to ADMIN</h2>
     </auth>
-    <el-button v-auth:allow="['EDITOR']">
+    <el-button v-auth:allow.active="['EDITOR']">
       <!--  -->
       Disabled via directive
     </el-button>
@@ -20,7 +20,7 @@
 </template>
 <script>
 import { config } from './config'
-import { authActions } from '~/constants/vuex/auth'
+import { authActions } from '~/store/auth/actions'
 export default {
   meta: {
     config,

@@ -49,19 +49,22 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import { authActions } from '~/constants/vuex/auth'
+import { config } from './config'
+import { authActions } from '~/store/auth/actions'
 import { ExampleComponent } from '~/components/uncommon/Home'
 export default {
   name: 'Home',
   meta: {
-    config: {
-      auth: false,
-      permission: ['ALL'],
-    },
+    config,
   },
   middleware: ['auth'],
   components: {
     ExampleComponent,
+  },
+  data() {
+    return {
+      file: null,
+    }
   },
   computed: mapState({
     locale: (state) => state.locale,
