@@ -2,10 +2,10 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   extends: [
     '@nuxtjs',
@@ -26,5 +26,5 @@ module.exports = {
     'vue/html-self-closing': 'off',
     'vue/no-v-html': 'off',
     'prettier/prettier': ['error', { semi: false }],
-  }
+  },
 }

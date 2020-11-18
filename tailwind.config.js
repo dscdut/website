@@ -6,6 +6,7 @@
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
 const colors = require('./client/constants/config/tailwindcss/colors.js')
+const fonts = require('./client/constants/config/tailwindcss/fonts.js')
 const srcDir = './client'
 module.exports = {
   future: {
@@ -18,7 +19,8 @@ module.exports = {
   theme: {
     extend: {
       colors: colors,
-    }
+      fontFamily: fonts,
+    },
   },
   variants: {},
   plugins: [],
