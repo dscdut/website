@@ -83,7 +83,7 @@ export default {
   async created() {
     const response = await this.$axios.post('abc.com/api/v1/login', {
       header: {
-        Authorization: `Bearer ${data.token}`,
+        Authorization: `Bearer ${this.token}`,
       },
     })
     console.log(response)
