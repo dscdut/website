@@ -3,6 +3,10 @@
 @import '~/assets/scss/tailwindcss/all.scss';
 // Your global custom style
 
+* {
+  font-family: Montserrat;
+}
+
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {  }
 

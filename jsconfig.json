@@ -12,6 +12,6 @@
       "~table/*": ["./client/components/common/Templates/Table*"],
     },
   },
-  "include": ["./client/**/*"],
+  "include": ["./client/**/*", "tailwind.config.js"],
   "exclude": ["node_modules", ".nuxt", "dist"]
 }
