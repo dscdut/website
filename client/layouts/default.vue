@@ -1,6 +1,7 @@
 <template>
   <div class="p-0 w-full">
-    <Navbar @signInDialogTrigger="dialogVisible = true" />
+    <FloatingLogo />
+    <Navbar />
     <nuxt keep-alive />
     <Login />
   </div>
@@ -8,12 +9,13 @@
 
 <script>
 import { Login } from '~/components/common/Auth'
-import { Navbar } from '~/components/common/Layout'
+import { Navbar, FloatingLogo } from '~/components/common/Layout'
 export default {
   name: 'Default',
   components: {
     Login,
     Navbar,
+    FloatingLogo,
   },
   methods: {
     triggerLoginForm() {

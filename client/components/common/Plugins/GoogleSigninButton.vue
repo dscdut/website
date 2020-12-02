@@ -36,7 +36,10 @@
           </span>
         </slot>
       </el-button>
-      <p v-show="isSignedIn">Welcome back, {{ currentUser.name }}</p>
+      <p v-show="isSignedIn">
+        <!--  -->
+        Welcome back, {{ currentUser.name }}
+      </p>
     </div>
   </div>
 </template>

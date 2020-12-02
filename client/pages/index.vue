@@ -1,80 +1,50 @@
 <template>
-  <el-main>
-    <el-button size="mini" type="warning" @click="$router.push('/secret')">
-      {{ $t('home.to-secret') }}
-    </el-button>
-    <transition name="slide-fade" mode="out-in">
-      <el-button
-        v-if="!$store.state.auth.data"
-        :key="'login-button'"
-        size="mini"
-        type="success"
-        @click="$root.$emit('my-dialog-show', 'login-form')"
-      >
-        {{ $t('home.login') }}
-      </el-button>
-      <el-button
-        v-else
-        :key="'logout-button'"
-        size="mini"
-        type="danger"
-        @click="logout"
-      >
-        {{ $t('home.logout') }}
-      </el-button>
-    </transition>
-    <ExampleComponent />
-    <transition name="slide-fade" mode="out-in">
-      <el-button
-        v-if="locale === 'en'"
-        :key="'locale-button-vi'"
-        size="mini"
-        type="danger"
-        class="text-yellow"
-        @click="$changeLocale('vi')"
-      >
-        Đổi sang vi
-      </el-button>
-      <el-button
-        v-else
-        :key="'locale-button-en'"
-        size="mini"
-        type="primary"
-        @click="$changeLocale('en')"
-      >
-        Change to en
-      </el-button>
-    </transition>
+  <el-main class="min-h-screen bg-gray-300 flex p-0">
+    <div style="width: 55%; flex: 7" class="bg-danger">
+      <!--  -->
+    </div>
+    <div style="width: 45%; flex: 5" class="bg-success flex flex-col">
+      <div style="margin-left: calc(1.25rem + 25px); margin-top: 1.25rem">
+        <h1 class="text-2xl text-gray-600 font-medium">
+          {{ 'Developer Student Clubs' }}
+        </h1>
+        <h2 class="text-lg text-gray-600">
+          {{ 'Danang university of science and technology' }}
+        </h2>
+      </div>
+      <div class="flex-1 flex flex-col justify-center">
+        <el-carousel height="450px" :autoplay="false" class="w-full">
+          <el-carousel-item
+            v-for="item in 4"
+            :key="item"
+            class="flex items-center justify-center"
+          >
+            <h3 class="small">
+              {{ item }}
+            </h3>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+    </div>
   </el-main>
 </template>
 <script>
 import { mapState } from 'vuex'
 import { config } from './config'
-import { authActions } from '~/store/auth/actions'
-import { ExampleComponent } from '~/components/uncommon/Home'
 export default {
   name: 'Home',
   meta: {
     config,
   },
   middleware: ['auth'],
-  components: {
-    ExampleComponent,
-  },
+  components: {},
   data() {
-    return {
-      file: null,
-    }
+    return {}
   },
   computed: mapState({
     locale: (state) => state.locale,
   }),
-  methods: {
-    async logout() {
-      await this.$store.dispatch(authActions.LOGOUT)
-      this.$router.push('/')
-    },
-  },
+  methods: {},
   head() {
     return {
       title: this.$t('home.title'),

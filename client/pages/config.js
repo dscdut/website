@@ -1,4 +1,4 @@
 export const config = {
-  auth: true,
+  auth: false,
   permission: ['ALL'],
 }
