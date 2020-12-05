@@ -195,7 +195,7 @@ export default {
   },
   router: {
     // base: '.'
-    middleware: []
+    middleware: ['mobile']
   },
   generate: {
     /*

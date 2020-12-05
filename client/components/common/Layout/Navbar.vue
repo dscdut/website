@@ -1,6 +1,7 @@
 <template>
   <nav
-    class="navbar flex flex-col justify-between fixed"
+    v-if="!isCollapsedNavbar"
+    class="navbar flex flex-col justify-between fixed z-10"
     style="left: 1.25rem; top: 50%; transform: translateY(-50%)"
   >
     <el-tooltip
@@ -58,6 +59,7 @@ export default {
   computed: {
     ...mapState({
       locale: (state) => state.locale,
+      isCollapsedNavbar: (state) => state.isCollapsedNavbar,
     }),
   },
 }

@@ -4,4 +4,5 @@ export default {
   login: 'Login',
   logout: 'Logout',
   'to-secret': 'To secret page',
+  'find-out-more': 'Find out more',
 }

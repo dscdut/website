@@ -4,4 +4,5 @@ export default {
   login: 'Đăng nhập',
   logout: 'Đăng xuất',
   'to-secret': 'Đến trang được bảo mật',
+  'find-out-more': 'Tìm hiểu thêm',
 }
